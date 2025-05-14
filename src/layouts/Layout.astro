@@ -4,16 +4,30 @@ import Footer from '../components/Footer.astro';
 ---
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>eXa Beauty Solutions</title>
-	</head>
-	<body class="flex flex-col min-h-screen">
-		<main class="w-full max-w-screen-xl mx-auto px-4 flex-grow">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>eXa Beauty Solutions</title>
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content="eXa Beauty Solutions" />
+        <meta property="og:description" content="Soluciones de belleza profesionales" />
+        <meta property="og:image" content={new URL('/exa-og.png', Astro.url)} />
+        
+        <!-- Twitter / X -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content="eXa Beauty Solutions" />
+        <meta property="twitter:description" content="Soluciones de belleza profesionales" />
+        <meta property="twitter:image" content={new URL('/exa-og.png', Astro.url)} />
+    </head>
+    <body class="flex flex-col min-h-screen">
+        <main class="w-full max-w-screen-xl mx-auto px-4 flex-grow">
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>
